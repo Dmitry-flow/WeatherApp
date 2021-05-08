@@ -37,7 +37,6 @@ extension AppFlow: Flow {
     }
     
     func navigate(to route: Route) {
-        <#code#>
     }
     
     
