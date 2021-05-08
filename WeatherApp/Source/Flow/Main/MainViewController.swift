@@ -8,6 +8,7 @@ protocol MainView: class {
 class MainViewController: UIViewController {
     
     private var presenter: MainPresenter!
+    let speedWind = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
