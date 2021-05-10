@@ -8,6 +8,7 @@ platform :ios, '13.0'
 def app_set
     pod 'Swinject' 
     pod 'SwinjectAutoregistration'
+    pod 'R.swift'
 end
 
 target 'WeatherApp' do

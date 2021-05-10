@@ -13,8 +13,5 @@ final class FlowAssembly {
 extension FlowAssembly: Assembly {
     
     func assemble(container: Container) {
-        container.register(AppFlow.self) { (resolver) in
-            AppFlow(resolver: resolver)
-        }.inObjectScope(.container)
     }
 }

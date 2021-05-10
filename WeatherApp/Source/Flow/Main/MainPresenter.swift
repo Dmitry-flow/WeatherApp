@@ -8,6 +8,10 @@ protocol MainPresenter {
 class MainPresenterImp {
 
     private weak var view: MainView?
+    
+    init(view: MainView) {
+        self.view = view
+    }
 }
 
 // MARK: - MainPresenter
