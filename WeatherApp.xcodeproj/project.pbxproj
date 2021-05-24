@@ -11,7 +11,6 @@
 		3A0567562642F77E009A0944 /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0567552642F77E009A0944 /* MainAssembly.swift */; };
 		3A05675A2642F98B009A0944 /* FlowAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0567592642F98B009A0944 /* FlowAssembly.swift */; };
 		3A05675D2642F99E009A0944 /* ServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A05675C2642F99E009A0944 /* ServiceAssembly.swift */; };
-		3A05676126441E4C009A0944 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A05676026441E4C009A0944 /* AppFlow.swift */; };
 		3A8F9FE52639AE88007A4312 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F9FE42639AE88007A4312 /* AppDelegate.swift */; };
 		3A8F9FE72639AE88007A4312 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F9FE62639AE88007A4312 /* SceneDelegate.swift */; };
 		3A8F9FE92639AE88007A4312 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F9FE82639AE88007A4312 /* MainViewController.swift */; };
@@ -19,6 +18,9 @@
 		3A8F9FEE2639AE89007A4312 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F9FED2639AE89007A4312 /* Assets.xcassets */; };
 		3A8F9FF12639AE89007A4312 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F9FEF2639AE89007A4312 /* LaunchScreen.storyboard */; };
 		3AB5AD42264972D100A6D474 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB5AD41264972D000A6D474 /* R.generated.swift */; };
+		3ACA80462653D6BA0096DFEC /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACA80452653D6BA0096DFEC /* AppCoordinator.swift */; };
+		3ACA80492653D6D30096DFEC /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACA80482653D6D30096DFEC /* Coordinator.swift */; };
+		3ACA804D2653D8C40096DFEC /* StartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACA804C2653D8C40096DFEC /* StartCoordinator.swift */; };
 		C588E24BA5D27818342D2B6C /* Pods_WeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9171A2CC4420AD71055B59 /* Pods_WeatherApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +29,6 @@
 		3A0567552642F77E009A0944 /* MainAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
 		3A0567592642F98B009A0944 /* FlowAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowAssembly.swift; sourceTree = "<group>"; };
 		3A05675C2642F99E009A0944 /* ServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAssembly.swift; sourceTree = "<group>"; };
-		3A05676026441E4C009A0944 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		3A8F9FE12639AE88007A4312 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8F9FE42639AE88007A4312 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A8F9FE62639AE88007A4312 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +39,9 @@
 		3A8F9FF22639AE89007A4312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A9171A2CC4420AD71055B59 /* Pods_WeatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB5AD41264972D000A6D474 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		3ACA80452653D6BA0096DFEC /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		3ACA80482653D6D30096DFEC /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		3ACA804C2653D8C40096DFEC /* StartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCoordinator.swift; sourceTree = "<group>"; };
 		941AEC75507F77B7FCC4C3F1 /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 		CB4617E482BC466EF5CF5612 /* Pods-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +70,7 @@
 		3A0567292642B03B009A0944 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				3ACA80442653D6760096DFEC /* Coordinator */,
 				3A05672B2642B194009A0944 /* AppDelegate */,
 				3A0567582642F7CC009A0944 /* Assemblies */,
 				3A05672D2642B1C4009A0944 /* Flow */,
@@ -103,9 +108,9 @@
 		3A05672D2642B1C4009A0944 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
-				3A05676026441E4C009A0944 /* AppFlow.swift */,
-				3A0567302642B229009A0944 /* LaunchFlow */,
+				3ACA80452653D6BA0096DFEC /* AppCoordinator.swift */,
 				3A05672E2642B1F8009A0944 /* Main */,
+				3A0567302642B229009A0944 /* LaunchFlow */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -187,6 +192,23 @@
 				3AB5AD41264972D000A6D474 /* R.generated.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		3ACA80442653D6760096DFEC /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				3ACA80482653D6D30096DFEC /* Coordinator.swift */,
+				3ACA804B2653D8A90096DFEC /* Start */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		3ACA804B2653D8A90096DFEC /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				3ACA804C2653D8C40096DFEC /* StartCoordinator.swift */,
+			);
+			path = Start;
 			sourceTree = "<group>";
 		};
 		884F787A356E8771FA871F31 /* Frameworks */ = {
@@ -333,11 +355,13 @@
 			files = (
 				3A0567562642F77E009A0944 /* MainAssembly.swift in Sources */,
 				3A05675A2642F98B009A0944 /* FlowAssembly.swift in Sources */,
+				3ACA80462653D6BA0096DFEC /* AppCoordinator.swift in Sources */,
 				3AB5AD42264972D100A6D474 /* R.generated.swift in Sources */,
 				3A8F9FE92639AE88007A4312 /* MainViewController.swift in Sources */,
 				3A05675D2642F99E009A0944 /* ServiceAssembly.swift in Sources */,
+				3ACA80492653D6D30096DFEC /* Coordinator.swift in Sources */,
+				3ACA804D2653D8C40096DFEC /* StartCoordinator.swift in Sources */,
 				3A8F9FE52639AE88007A4312 /* AppDelegate.swift in Sources */,
-				3A05676126441E4C009A0944 /* AppFlow.swift in Sources */,
 				3A8F9FE72639AE88007A4312 /* SceneDelegate.swift in Sources */,
 				3A0567482642EA7C009A0944 /* MainPresenter.swift in Sources */,
 			);

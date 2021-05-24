@@ -36,8 +36,10 @@ private extension SceneDelegate {
     }
     
     func configureFlow() {
-        let mainViewController = assembler.resolver ~> MainViewController.self
-        self.window?.rootViewController = mainViewController
+        let coordinator = assembler.resolver ~> AppCoordinator.self
+        coordinator.start()
+
+        self.window?.rootViewController = coordinator.root
         self.window?.makeKeyAndVisible()
     }
 }
