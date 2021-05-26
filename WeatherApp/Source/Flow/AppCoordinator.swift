@@ -12,28 +12,51 @@ enum Route {
 
 class AppCoordinator {
     
-    let rootViewController = UITabBarController()
+    private let tapBarController = UITabBarController()
     
     private let resolver: Resolver
-
+    
     init(resolver: Resolver) {
         self.resolver = resolver
+        
+        setupTapBar()
     }
 }
+
+// MARK: - Navigate
 
 extension AppCoordinator: Coordinator {
     
     func navigate(to route: Route) {
     }
+}
+
+// MARK: - Start
+
+extension AppCoordinator: Coordination {
     
     var root: UIViewController {
-        rootViewController
+        tapBarController
     }
     
     func start() {
-        let startCoordinator = resolver ~> StartCordinator.self
-        rootViewController.setViewControllers([startCoordinator.root, UIViewController()], animated: false)
-        startCoordinator.start()
+        let localCoordinator = resolver ~> LocalCordinator.self
+        let favoritesCoordinator = resolver ~> FavoritesCoordinator.self
+
+        tapBarController.setViewControllers([localCoordinator.root, favoritesCoordinator.root], animated: false)
+        localCoordinator.start()
+        favoritesCoordinator.start()
+        
+
+    }
+}
+
+// MARK: - Private
+
+private extension AppCoordinator {
+    
+    func setupTapBar() {
+        
     }
 }
  

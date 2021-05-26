@@ -17,8 +17,12 @@ extension FlowAssembly: Assembly {
             AppCoordinator(resolver: resolver)
         }.inObjectScope(.container)
         
-        container.register(StartCordinator.self) { (resolver) in
-            StartCordinator(resolver: resolver)
+        container.register(LocalCordinator.self) { (resolver) in
+            LocalCordinator(resolver: resolver)
+        }.inObjectScope(.container)
+        
+        container.register(FavoritesCoordinator.self) { (resolver) in
+            FavoritesCoordinator(resolver: resolver)
         }.inObjectScope(.container)
     }
 }

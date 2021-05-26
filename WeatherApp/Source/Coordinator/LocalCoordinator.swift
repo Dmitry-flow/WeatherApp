@@ -5,27 +5,34 @@ import Rswift
 import Swinject
 import SwinjectAutoregistration
 
-class StartCordinator {
+class LocalCordinator {
     
     private let resolver: Resolver
     
     let rootViewController = UINavigationController()
-
+    
     init(resolver: Resolver) {
         self.resolver = resolver
     }
 }
 
-extension StartCordinator: Coordinator {
+// MARK: - Start
+
+extension LocalCordinator: Coordination {
     
     var root: UIViewController {
         rootViewController
     }
     
     func start() {
-        let startViewController = resolver ~> MainViewController.self
-        rootViewController.setViewControllers([startViewController], animated: false)
+        let localViewController = resolver ~> WeatherViewController.self
+        rootViewController.setViewControllers([localViewController], animated: false)
     }
+}
+
+// MARK: - Navigate
+
+extension LocalCordinator: Coordinator {
     
     func navigate(to route: Route) {
         switch route {
@@ -34,7 +41,7 @@ extension StartCordinator: Coordinator {
             
         case .weather:
             rootViewController.pushViewController(UIViewController(), animated: true)
-
+            
         default:
             break
         }

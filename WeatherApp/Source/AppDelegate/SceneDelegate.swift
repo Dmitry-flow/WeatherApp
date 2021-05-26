@@ -26,7 +26,8 @@ private extension SceneDelegate {
         
         let modulesAssembler = Assembler(
             [
-                MainAssembly()
+                WeatherAssembly(),
+                FavouritesAssembly()
             ],
             parent: serviceAssembler)
         
@@ -34,6 +35,8 @@ private extension SceneDelegate {
             [FlowAssembly()],
             parent: modulesAssembler)
     }
+    
+    
     
     func configureFlow() {
         let coordinator = assembler.resolver ~> AppCoordinator.self
