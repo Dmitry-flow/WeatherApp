@@ -13,7 +13,6 @@ class WeatherPresenterImp {
     init(view: WeatherView, coordinator: Coordinator) {
         self.view = view
         self.coordinator = coordinator
-        
     }
 }
 

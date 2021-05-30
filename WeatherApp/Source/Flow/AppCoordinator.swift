@@ -4,13 +4,7 @@ import UIKit
 import Swinject
 import SwinjectAutoregistration
 
-enum Route {
-    case main
-    case search
-    case weather
-}
-
-class AppCoordinator {
+final class AppCoordinator {
     
     private let tapBarController = UITabBarController()
     
@@ -18,8 +12,6 @@ class AppCoordinator {
     
     init(resolver: Resolver) {
         self.resolver = resolver
-        
-        setupTapBar()
     }
 }
 
@@ -47,6 +39,7 @@ extension AppCoordinator: Coordination {
         localCoordinator.start()
         favoritesCoordinator.start()
         
+        setupTapBar(with: [localCoordinator.root, favoritesCoordinator.root])
 
     }
 }
@@ -55,7 +48,9 @@ extension AppCoordinator: Coordination {
 
 private extension AppCoordinator {
     
-    func setupTapBar() {
+    func setupTapBar(with viewControllers: [UIViewController]) {
+        viewControllers.first?.tabBarItem = UITabBarItem(title: "My location", image: .actions, tag: 0)
+        viewControllers.last?.tabBarItem = UITabBarItem(title: "Favorites", image: .strokedCheckmark, tag: 1)
         
     }
 }

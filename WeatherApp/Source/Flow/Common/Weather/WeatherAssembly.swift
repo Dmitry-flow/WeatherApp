@@ -13,7 +13,7 @@ extension WeatherAssembly: Assembly {
     
     func assemble(container: Container) {
         container.register(WeatherViewController.self) { resolver in
-            let view = R.storyboard.main.instantiateInitialViewController()!
+            let view = R.storyboard.weather.instantiateInitialViewController()!
             
             let presenter = resolver.resolve(WeatherPresenter.self, argument: view)!
             view.inject(presenter: presenter)

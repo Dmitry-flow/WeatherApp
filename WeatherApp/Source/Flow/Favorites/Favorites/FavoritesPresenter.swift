@@ -22,3 +22,4 @@ class FavouritesPresenterImp {
 extension FavouritesPresenterImp: FavouritesPresenter {
     
 }
+
