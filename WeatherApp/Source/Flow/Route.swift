@@ -6,3 +6,4 @@ enum Route {
     case search
     case weather
 }
+
