@@ -179,6 +179,34 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  struct nib {
+    /// Nib `WeatherTableViewCell`.
+    static let weatherTableViewCell = _R.nib._WeatherTableViewCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "WeatherTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.weatherTableViewCell) instead")
+    static func weatherTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.weatherTableViewCell)
+    }
+    #endif
+
+    static func weatherTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> WeatherTableViewCell? {
+      return R.nib.weatherTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? WeatherTableViewCell
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `WeatherTableViewCell`.
+    static let weatherTableViewCell: Rswift.ReuseIdentifier<WeatherTableViewCell> = Rswift.ReuseIdentifier(identifier: "WeatherTableViewCell")
+
+    fileprivate init() {}
+  }
+
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()
@@ -198,6 +226,26 @@ struct _R: Rswift.Validatable {
     try storyboard.validate()
     #endif
   }
+
+  #if os(iOS) || os(tvOS)
+  struct nib {
+    struct _WeatherTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = WeatherTableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "WeatherTableViewCell"
+      let name = "WeatherTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> WeatherTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? WeatherTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
 
   #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {

@@ -11,6 +11,9 @@
 		3A0567562642F77E009A0944 /* WeatherAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0567552642F77E009A0944 /* WeatherAssembly.swift */; };
 		3A05675A2642F98B009A0944 /* FlowAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0567592642F98B009A0944 /* FlowAssembly.swift */; };
 		3A05675D2642F99E009A0944 /* ServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A05675C2642F99E009A0944 /* ServiceAssembly.swift */; };
+		3A22698E26779CD50072DE57 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A22698D26779CD50072DE57 /* LocationService.swift */; };
+		3A5DCC4D267106F0001027FC /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5DCC4B267106F0001027FC /* WeatherTableViewCell.swift */; };
+		3A5DCC4E267106F0001027FC /* WeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A5DCC4C267106F0001027FC /* WeatherTableViewCell.xib */; };
 		3A7ABA1B265BC2DD00933265 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7ABA1A265BC2DD00933265 /* FavoritesViewController.swift */; };
 		3A7ABA1F265BC36B00933265 /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7ABA1E265BC36B00933265 /* FavoritesPresenter.swift */; };
 		3A7ABA22265BC39000933265 /* FavoritesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7ABA21265BC39000933265 /* FavoritesAssembly.swift */; };
@@ -36,6 +39,9 @@
 		3A0567552642F77E009A0944 /* WeatherAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAssembly.swift; sourceTree = "<group>"; };
 		3A0567592642F98B009A0944 /* FlowAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowAssembly.swift; sourceTree = "<group>"; };
 		3A05675C2642F99E009A0944 /* ServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAssembly.swift; sourceTree = "<group>"; };
+		3A22698D26779CD50072DE57 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		3A5DCC4B267106F0001027FC /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
+		3A5DCC4C267106F0001027FC /* WeatherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherTableViewCell.xib; sourceTree = "<group>"; };
 		3A7ABA1A265BC2DD00933265 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		3A7ABA1E265BC36B00933265 /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
 		3A7ABA21265BC39000933265 /* FavoritesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesAssembly.swift; sourceTree = "<group>"; };
@@ -115,6 +121,7 @@
 		3A05672C2642B1B3009A0944 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				3A22698D26779CD50072DE57 /* LocationService.swift */,
 				3A8021CF2668D3B70001615D /* Networking */,
 			);
 			path = Logic;
@@ -172,6 +179,23 @@
 				3A05675C2642F99E009A0944 /* ServiceAssembly.swift */,
 			);
 			path = Assemblies;
+			sourceTree = "<group>";
+		};
+		3A5DCC502671070F001027FC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A5DCC5226710725001027FC /* WeatherTableViewCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3A5DCC5226710725001027FC /* WeatherTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3A5DCC4B267106F0001027FC /* WeatherTableViewCell.swift */,
+				3A5DCC4C267106F0001027FC /* WeatherTableViewCell.xib */,
+			);
+			path = WeatherTableViewCell;
 			sourceTree = "<group>";
 		};
 		3A7ABA19265BC21400933265 /* Favorites */ = {
@@ -233,6 +257,7 @@
 				3A0567472642EA7C009A0944 /* WeatherPresenter.swift */,
 				3A0567552642F77E009A0944 /* WeatherAssembly.swift */,
 				3A8F9FEA2639AE88007A4312 /* Weather.storyboard */,
+				3A5DCC502671070F001027FC /* Views */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -334,6 +359,7 @@
 			files = (
 				3A8F9FF12639AE89007A4312 /* LaunchScreen.storyboard in Resources */,
 				3A8F9FEE2639AE89007A4312 /* Assets.xcassets in Resources */,
+				3A5DCC4E267106F0001027FC /* WeatherTableViewCell.xib in Resources */,
 				3A8F9FEC2639AE88007A4312 /* Weather.storyboard in Resources */,
 				3A7ABA25265BC46900933265 /* Main.storyboard in Resources */,
 			);
@@ -413,6 +439,8 @@
 				3ACA80462653D6BA0096DFEC /* AppCoordinator.swift in Sources */,
 				3AA9AEAA266D047100A04999 /* ApiClient.swift in Sources */,
 				3A7ABA32265D131500933265 /* FavoritesCoordinator.swift in Sources */,
+				3A22698E26779CD50072DE57 /* LocationService.swift in Sources */,
+				3A5DCC4D267106F0001027FC /* WeatherTableViewCell.swift in Sources */,
 				3AC721C7265EFA39007BE6F4 /* Route.swift in Sources */,
 				3AB5AD42264972D100A6D474 /* R.generated.swift in Sources */,
 				3A7ABA22265BC39000933265 /* FavoritesAssembly.swift in Sources */,

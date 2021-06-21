@@ -23,7 +23,11 @@ extension WeatherAssembly: Assembly {
         
         container.register(WeatherPresenter.self) { (resolver, view: WeatherViewController) in
             let coordinator = resolver ~> LocalCordinator.self
-            return WeatherPresenterImp(view: view, coordinator: coordinator)
+            return WeatherPresenterImp(
+                view: view,
+                coordinator: coordinator,
+                apiClient: resolver~>,
+                locationService: resolver~>)
         }
     }
 }
