@@ -23,8 +23,12 @@ class WeatherViewController: UIViewController {
         tableView.register(UINib(nibName: weatherCellId, bundle: nil), forCellReuseIdentifier: weatherCellId)
         tableView.rowHeight = 70
         tableView.separatorColor = .none
+        tableView.backgroundColor = .clear
+        
         
         updateLabel()
+        gradientColor()
+        
     }
     
     func inject(presenter: WeatherPresenter) {
@@ -54,6 +58,8 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: weatherCellId, for: indexPath) as! WeatherTableViewCell
         cell.selectionStyle = .none
+        cell.backgroundColor = .clear
+        
         let modelForecast = presenter.dailyForecasts[indexPath.row]
         cell.update(model: modelForecast)
         return cell
@@ -73,5 +79,17 @@ extension WeatherViewController {
         statusLabel.text = presenter.weather.text
         tempLabel.text = temperature
         fellsLikeLabel.text = "Feels like: \(fellsLikeTemperature)"
+    }
+}
+
+// MARK: - GradientColor
+
+extension WeatherViewController {
+    
+    func gradientColor() {
+        let newLayer = CAGradientLayer()
+        newLayer.colors = [UIColor.systemBlue.cgColor, UIColor.systemPurple.cgColor]
+        newLayer.frame = view.frame
+        view.layer.insertSublayer(newLayer, at: 0)
     }
 }

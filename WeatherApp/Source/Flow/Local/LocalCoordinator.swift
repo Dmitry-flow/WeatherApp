@@ -13,6 +13,8 @@ class LocalCordinator {
     
     init(resolver: Resolver) {
         self.resolver = resolver
+        
+        appearance()
     }
 }
 
@@ -45,6 +47,13 @@ extension LocalCordinator: Coordinator {
         default:
             break
         }
+    }
+}
+
+extension LocalCordinator {
+    
+    func appearance() {
+        rootViewController.navigationBar.barTintColor = .systemBlue
     }
 }
 

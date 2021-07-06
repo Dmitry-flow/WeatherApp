@@ -9,6 +9,8 @@ def app_set
     pod 'Swinject' 
     pod 'SwinjectAutoregistration'
     pod 'R.swift'
+    pod 'Alamofire'
+
 end
 
 target 'WeatherApp' do

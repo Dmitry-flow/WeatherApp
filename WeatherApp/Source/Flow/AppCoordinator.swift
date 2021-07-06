@@ -49,9 +49,11 @@ extension AppCoordinator: Coordination {
 private extension AppCoordinator {
     
     func setupTapBar(with viewControllers: [UIViewController]) {
-        viewControllers.first?.tabBarItem = UITabBarItem(title: "My location", image: .actions, tag: 0)
-        viewControllers.last?.tabBarItem = UITabBarItem(title: "Favorites", image: .strokedCheckmark, tag: 1)
+        viewControllers.first?.tabBarItem = UITabBarItem(title: "My location", image: R.image.cloudy(), tag: 0)
+        viewControllers.last?.tabBarItem = UITabBarItem(title: "Favorites", image: R.image.star(), tag: 1)
         
+        tapBarController.tabBar.barTintColor = .systemPurple
+        tapBarController.tabBar.tintColor = .white
     }
 }
  

@@ -11,6 +11,7 @@
 		3A0567562642F77E009A0944 /* WeatherAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0567552642F77E009A0944 /* WeatherAssembly.swift */; };
 		3A05675A2642F98B009A0944 /* FlowAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0567592642F98B009A0944 /* FlowAssembly.swift */; };
 		3A05675D2642F99E009A0944 /* ServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A05675C2642F99E009A0944 /* ServiceAssembly.swift */; };
+		3A0BC47B2684CB54007BBA69 /* ContentSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0BC47A2684CB54007BBA69 /* ContentSizedTableView.swift */; };
 		3A22698E26779CD50072DE57 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A22698D26779CD50072DE57 /* LocationService.swift */; };
 		3A5DCC4D267106F0001027FC /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5DCC4B267106F0001027FC /* WeatherTableViewCell.swift */; };
 		3A5DCC4E267106F0001027FC /* WeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A5DCC4C267106F0001027FC /* WeatherTableViewCell.xib */; };
@@ -39,6 +40,7 @@
 		3A0567552642F77E009A0944 /* WeatherAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAssembly.swift; sourceTree = "<group>"; };
 		3A0567592642F98B009A0944 /* FlowAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowAssembly.swift; sourceTree = "<group>"; };
 		3A05675C2642F99E009A0944 /* ServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAssembly.swift; sourceTree = "<group>"; };
+		3A0BC47A2684CB54007BBA69 /* ContentSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSizedTableView.swift; sourceTree = "<group>"; };
 		3A22698D26779CD50072DE57 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		3A5DCC4B267106F0001027FC /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 		3A5DCC4C267106F0001027FC /* WeatherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherTableViewCell.xib; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		3A0567292642B03B009A0944 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				3A0BC4792684CAFE007BBA69 /* Utilities */,
 				3A05672B2642B194009A0944 /* AppDelegate */,
 				3A0567582642F7CC009A0944 /* Assemblies */,
 				3ACA80442653D6760096DFEC /* Coordinator */,
@@ -133,8 +136,8 @@
 				3ACA80452653D6BA0096DFEC /* AppCoordinator.swift */,
 				3AC721C6265EFA39007BE6F4 /* Route.swift */,
 				3A05672E2642B1F8009A0944 /* Local */,
+				3AC721B7265E8B70007BE6F4 /* Weather */,
 				3A7ABA19265BC21400933265 /* Favorites */,
-				3AC721BC265E8C7E007BE6F4 /* Common */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -179,6 +182,14 @@
 				3A05675C2642F99E009A0944 /* ServiceAssembly.swift */,
 			);
 			path = Assemblies;
+			sourceTree = "<group>";
+		};
+		3A0BC4792684CAFE007BBA69 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3A0BC47A2684CB54007BBA69 /* ContentSizedTableView.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		3A5DCC502671070F001027FC /* Views */ = {
@@ -271,14 +282,6 @@
 				3A7ABA24265BC46900933265 /* Main.storyboard */,
 			);
 			path = Favorites;
-			sourceTree = "<group>";
-		};
-		3AC721BC265E8C7E007BE6F4 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				3AC721B7265E8B70007BE6F4 /* Weather */,
-			);
-			path = Common;
 			sourceTree = "<group>";
 		};
 		3ACA80442653D6760096DFEC /* Coordinator */ = {
@@ -436,6 +439,7 @@
 				3A7ABA1B265BC2DD00933265 /* FavoritesViewController.swift in Sources */,
 				3A0567562642F77E009A0944 /* WeatherAssembly.swift in Sources */,
 				3A05675A2642F98B009A0944 /* FlowAssembly.swift in Sources */,
+				3A0BC47B2684CB54007BBA69 /* ContentSizedTableView.swift in Sources */,
 				3ACA80462653D6BA0096DFEC /* AppCoordinator.swift in Sources */,
 				3AA9AEAA266D047100A04999 /* ApiClient.swift in Sources */,
 				3A7ABA32265D131500933265 /* FavoritesCoordinator.swift in Sources */,

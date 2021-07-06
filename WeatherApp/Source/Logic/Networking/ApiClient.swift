@@ -1,4 +1,5 @@
 import Foundation
+import Alamofire
 
 enum ApiDomain: String {
     case openWeather = "api.weatherapi.com"
@@ -16,6 +17,7 @@ protocol ApiClient {
 final class ApiClientImp {
     
     let apiKey = "4e2d0f7b48e64258865105146210806"
+    
 }
 
 //            let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
@@ -24,24 +26,15 @@ final class ApiClientImp {
 
 extension ApiClientImp: ApiClient {
     
-    
     func request(cityName: String, onSuccess: @escaping (Forecast) -> ()) {
+        
         let url = makeURL(request: .weatherForecast(cityName))
         
-        let dataTask = URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
-            
-            let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
-            
-            guard let data = data,
+        AF.request(url, method: .get, encoding: URLEncoding.default).responseJSON { response in
+            guard let data = response.data,
                   let product: Forecast = try? JSONDecoder().decode(Forecast.self, from: data) else { return }
             onSuccess(product)
             
-            if let error = error {
-                print(error)
-            }
-        }
-        DispatchQueue.main.async {
-            dataTask.resume()
         }
     }
     
@@ -77,7 +70,6 @@ struct Weather: Decodable {
         self.temp = temp
         self.text = text
         self.feelsLike = feelsLike
-        
     }
 }
 
@@ -105,16 +97,18 @@ struct Forecast: Decodable {
 }
 
 struct DailyWeather: Decodable {
+    var icon: String
     var date: String
     var tempMin: Double
     var tempMax: Double
     
     enum CodingKeys: String, CodingKey {
+        case condition
         case day
         case date
-        case temp = "temp_c"
         case tempMin = "mintemp_c"
         case tempMax = "maxtemp_c"
+        case icon
     }
     
     init(from decoder: Decoder) throws {
@@ -123,7 +117,8 @@ struct DailyWeather: Decodable {
         let day = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .day)
         tempMin = try day.decode(Double.self, forKey: .tempMin)
         tempMax = try day.decode(Double.self, forKey: .tempMax)
+        let condition = try day.nestedContainer(keyedBy: CodingKeys.self, forKey: .condition)
+        icon = "http:\(try condition.decode(String.self, forKey: .icon))"
     }
 }
-
 
