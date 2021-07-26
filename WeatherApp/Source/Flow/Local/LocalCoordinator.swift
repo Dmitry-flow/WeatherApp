@@ -50,6 +50,8 @@ extension LocalCordinator: Coordinator {
     }
 }
 
+// MARK: - Appearance
+
 extension LocalCordinator {
     
     func appearance() {

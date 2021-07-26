@@ -10,6 +10,7 @@ def app_set
     pod 'SwinjectAutoregistration'
     pod 'R.swift'
     pod 'Alamofire'
+    pod 'SwifterSwift'
 
 end
 

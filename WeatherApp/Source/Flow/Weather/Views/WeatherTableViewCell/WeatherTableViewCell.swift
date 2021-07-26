@@ -10,8 +10,11 @@ class WeatherTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        cellSet()
     }
 }
+
+// MARK: - WeatherTableViewCell
 
 extension WeatherTableViewCell {
     
@@ -25,7 +28,11 @@ extension WeatherTableViewCell {
         
         dayLabel.text = getData(date: model.date)
         loadImage(url: url!)
-        
+    }
+    
+    func cellSet() {
+        selectionStyle = .none
+        backgroundColor = .clear
     }
 }
 
@@ -35,11 +42,10 @@ extension WeatherTableViewCell {
     
     func loadImage(url: URL) {
         DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.iconImage.image = image
-                    }
+            if let data = try? Data(contentsOf: url),
+               let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    self?.iconImage.image = image
                 }
             }
         }
@@ -51,15 +57,15 @@ extension WeatherTableViewCell {
 extension WeatherTableViewCell {
     
     func getData(date: String) -> String {
-        
         var dateToday = ""
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "yyyy, MM, dd"
+        
         let dateFormatterPrint = DateFormatter()
         dateFormatterPrint.dateFormat = "EEEE"
+        
         if let today = dateFormatterGet.date(from: date) {
             dateToday = dateFormatterPrint.string(from: today)
-            print(dateToday)
         } else {
             print("There was an error decoding the string")
         }

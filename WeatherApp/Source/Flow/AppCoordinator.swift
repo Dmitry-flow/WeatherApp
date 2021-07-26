@@ -6,9 +6,8 @@ import SwinjectAutoregistration
 
 final class AppCoordinator {
     
-    private let tapBarController = UITabBarController()
-    
     private let resolver: Resolver
+    private let tapBarController = UITabBarController()
     
     init(resolver: Resolver) {
         self.resolver = resolver
@@ -52,7 +51,7 @@ private extension AppCoordinator {
         viewControllers.first?.tabBarItem = UITabBarItem(title: "My location", image: R.image.cloudy(), tag: 0)
         viewControllers.last?.tabBarItem = UITabBarItem(title: "Favorites", image: R.image.star(), tag: 1)
         
-        tapBarController.tabBar.barTintColor = .systemPurple
+        tapBarController.tabBar.barTintColor = .purple
         tapBarController.tabBar.tintColor = .white
     }
 }

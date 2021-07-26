@@ -5,14 +5,17 @@ import Rswift
 import Swinject
 import SwinjectAutoregistration
 
-class FavoritesCoordinator {
+final class FavoritesCoordinator {
     
     private let resolver: Resolver
     
     let navigationController = UINavigationController()
     
     init(resolver: Resolver) {
+        
         self.resolver = resolver
+        
+        appearance()
     }
 }
 
@@ -30,7 +33,7 @@ extension FavoritesCoordinator: Coordination {
     }
 }
 
-//MARK: - Navigation
+// MARK: - Navigation
 
 extension FavoritesCoordinator: Coordinator {
     
@@ -45,5 +48,14 @@ extension FavoritesCoordinator: Coordinator {
         default:
             break
         }
+    }
+}
+
+// MARK: - Appearance
+
+extension FavoritesCoordinator {
+    
+    func appearance() {
+        navigationController.navigationBar.barTintColor = .systemBlue
     }
 }

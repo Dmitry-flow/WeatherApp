@@ -4,7 +4,7 @@ import Rswift
 import Swinject
 import SwinjectAutoregistration
 
-class WeatherAssembly {
+final class WeatherAssembly {
 }
 
 // MARK: - WeatherAssembly
@@ -26,8 +26,7 @@ extension WeatherAssembly: Assembly {
             return WeatherPresenterImp(
                 view: view,
                 coordinator: coordinator,
-                apiClient: resolver~>,
-                locationService: resolver~>)
+                apiClient: resolver~>, locationService: resolver~>)
         }
     }
 }

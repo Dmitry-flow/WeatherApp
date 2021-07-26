@@ -27,7 +27,7 @@ struct DailyWeatherResponse: Decodable {
     }
 }
 
-struct DailyWeatherResponse: Codable {
+struct DailyWeather: Codable {
     var icon: String
     var date: String
     var tempMin: Double

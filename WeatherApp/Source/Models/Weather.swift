@@ -1,7 +1,7 @@
 
 import Foundation
 
-struct Weather: Decodable {
+struct WeatherResponse: Decodable {
     var temp: Double
     var text: String
     var feelsLike: Double
@@ -26,4 +26,17 @@ struct Weather: Decodable {
         self.text = text
         self.feelsLike = feelsLike
     }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(temp, forKey: .temp)
+        try container.encode(text, forKey: .text)
+        try container.encode(feelsLike, forKey: .feelsLike)
+    }
+}
+
+struct Weather: Codable {
+    var temp: Double
+    var text: String
+    var feelsLike: Double
 }

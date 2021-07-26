@@ -5,12 +5,13 @@ import CoreMotion
 import UserNotifications
 
 protocol LocationService {
+    
     func getLocation(onSuccess: @escaping (String) -> ())
 }
 
-class LocationServiceImp: NSObject {
+final class LocationServiceImp: NSObject {
     
-    var didGetCity: ((String) -> ())?
+    var cityCompletion: ((String) -> ())?
     private let locationManager = CLLocationManager()
     
     override init() {
@@ -31,7 +32,7 @@ extension LocationServiceImp: LocationService {
     
     func getLocation(onSuccess: @escaping (String) -> ())  {
         start()
-        didGetCity = onSuccess
+        cityCompletion = onSuccess
     }
 }
 
@@ -56,7 +57,7 @@ extension LocationServiceImp: CLLocationManagerDelegate {
 
 // MARK: - ReverseCoordinates
 
-extension LocationServiceImp {
+private extension LocationServiceImp {
     
     func reverseCoordinates(_ coordinates: CLLocation) {
         
@@ -67,7 +68,7 @@ extension LocationServiceImp {
                 print("Unable to reverse geocode the given location. Error: \(errorString)")
                 return
             }
-            self.didGetCity?(city)
+            self.cityCompletion?(city)
         }
     }
 }
